@@ -1,0 +1,275 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Hostel Outpass</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🏫 Smart Hostel
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#student">Student</a>
+            <a href="#parent">Parent</a>
+            <a href="#warden">Warden</a>
+            <a href="#security">Security</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Home -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>Smart Hostel<br>Outpass Management</h1>
+
+            <p>
+                Digital outpass system with parent approval,
+                warden verification and QR-based gate entry.
+            </p>
+
+            <button onclick="showStudent()">
+                Apply Outpass
+            </button>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="icon">🎓</div>
+
+            <h2>Safe • Smart • Digital</h2>
+
+            <p>
+                Manage hostel leave requests easily
+                and securely.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Student Section -->
+
+    <section id="student" class="section">
+
+        <h2>🎓 Student Outpass</h2>
+
+        <div class="card">
+
+            <label>Student Name</label>
+            <input type="text" id="studentName"
+                   placeholder="Enter your name">
+
+            <label>Register Number</label>
+            <input type="text" id="registerNo"
+                   placeholder="Enter register number">
+
+            <label>Leave Type</label>
+
+            <select id="leaveType">
+
+                <option value="Normal Leave">
+                    Normal Leave
+                </option>
+
+                <option value="Emergency Leave">
+                    Emergency Leave
+                </option>
+
+            </select>
+
+            <label>Leaving Date</label>
+
+            <input type="date" id="leaveDate">
+
+            <label>Return Date</label>
+
+            <input type="date" id="returnDate">
+
+            <label>Reason</label>
+
+            <textarea id="reason"
+                      placeholder="Enter reason"></textarea>
+
+            <button onclick="submitRequest()">
+                Submit Outpass
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Parent Section -->
+
+    <section id="parent" class="section">
+
+        <h2>👨‍👩‍👧 Parent Approval</h2>
+
+        <div class="card">
+
+            <p>
+                An OTP has been sent to the registered
+                parent's mobile number.
+            </p>
+
+            <input type="text"
+                   id="otp"
+                   placeholder="Enter OTP">
+
+            <button onclick="verifyOTP()">
+                Verify OTP
+            </button>
+
+            <p id="otpStatus"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Warden Section -->
+
+    <section id="warden" class="section">
+
+        <h2>👮 Warden Approval</h2>
+
+        <div class="card">
+
+            <p>
+                Parent verification status:
+            </p>
+
+            <h3 id="parentStatus">
+                Waiting for parent
+            </h3>
+
+            <button onclick="approveRequest()">
+                Approve Outpass
+            </button>
+
+            <p id="wardenStatus"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QR Section -->
+
+    <section id="qrSection" class="section">
+
+        <h2>📱 Digital Outpass</h2>
+
+        <div class="qr-card">
+
+            <div id="qrcode"></div>
+
+            <h3 id="qrStudent"></h3>
+
+            <p id="qrDetails"></p>
+
+            <p>
+                Show this QR code at the hostel gate.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Security Section -->
+
+    <section id="security" class="section">
+
+        <h2>🔐 Security Gate</h2>
+
+        <div class="card">
+
+            <input type="text"
+                   id="scanQR"
+                   placeholder="Enter / scan Outpass ID">
+
+            <button onclick="scanOutpass()">
+                Scan Outpass
+            </button>
+
+            <div id="gateResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- History -->
+
+    <section class="section">
+
+        <h2>📋 Outpass History</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Student</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Out Time</th>
+                        <th>In Time</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="history">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            Smart Hostel Outpass Management System
+        </p>
+
+        <p>
+            B.Tech Information Technology Project
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
