@@ -1,0 +1,2 @@
+# Smart-hostel-outpass-management
+Smart Hostel Outpass Management System is a digital system that simplifies the hostel leave and outpass process. Students can apply for an outpass online, get parent approval through OTP, and receive a QR-based outpass. The QR code can be scanned at the hostel gate to verify the student and record in-time and out-time. It also provides an emergency leave option and reduces paperwork while improving hostel security.
